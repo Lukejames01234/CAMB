@@ -32,6 +32,8 @@ class DarkEnergyEqnOfState(DarkEnergyModel):
         ("w", c_double, "w(0)"),
         ("wa", c_double, "-dw/da(0)"),
         ("cs2", c_double, "fluid rest-frame sound speed squared"),
+        #test variable for implementing changes
+        ("newvariable", c_double, "new variable for implementing changes"),
         ("use_tabulated_w", c_bool, "using an interpolated tabulated w(a) rather than w, wa above"),
         ("__no_perturbations", c_bool, "turn off perturbations (unphysical, so hidden in Python)")
     ]
@@ -49,7 +51,7 @@ class DarkEnergyEqnOfState(DarkEnergyModel):
         self.w = w
         self.wa = wa
         self.cs2 = cs2
-        #test variable for implementing changes
+        #assigning value to test variable
         self.newvariable = newvariable
         self.validate_params()
 
